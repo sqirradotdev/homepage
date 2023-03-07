@@ -27,7 +27,7 @@ export default function Home() {
 
         <h2 className={styles.heading}>Find me in:</h2>
         <div className={styles.socialIconsList}>
-          <a href="https://github.com/gedehari" target="_blank"><i className="bi bi-discord" /></a>
+          <a href="https://github.com/gedehari" target="_blank"><i className="bi bi-github" /></a>
           <a href="https://twitter.com/gedehari" target="_blank"><i className="bi bi-twitter" /></a>
           <a href="https://www.instagram.com/gedehari/" target="_blank"><i className="bi bi-instagram" /></a>
         </div>
