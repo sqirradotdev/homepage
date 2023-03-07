@@ -37,8 +37,8 @@ div.sortDiv {
 }
 
 .projectRow img {
-    width: 80%;
-    max-width: 320px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto 30px auto;
 

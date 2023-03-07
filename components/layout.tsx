@@ -14,7 +14,7 @@ export default function Layout({ children, page }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>{page} - gedehari's homepage</title>
+        <title>{page as string} - gedehari's homepage</title>
       </Head>
       <header>
         <nav className={styles.navbar}>

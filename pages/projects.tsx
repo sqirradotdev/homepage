@@ -72,7 +72,9 @@ export default function Projects({ projectList }: ProjectsProps) {
               return (
                 <div className={styles.projectRow} key={value.id}>
                   <h3>{value.title}</h3>
-                  <Image src={`/img/projects/${value.id}.png`} width={315} height={250} alt="" />
+                  {
+                    value.hasImage ? <Image src={`/img/projects/${value.id}.png`} width={315} height={250} alt="" /> : <></>
+                  }
                   <ul>
                     <li><b>date:</b> {(value.date as Date).toLocaleDateString()}</li>
                     <li><b>type:</b> game</li>

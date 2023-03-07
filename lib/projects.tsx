@@ -4,12 +4,14 @@ import matter from "gray-matter"
 
 export interface ProjectInfo {
     id: string
+    hasImage: boolean
     title: string
     date: Date | string
     content: string
 }
 
 const projectsDir = path.join(process.cwd(), "projects")
+const imagesDir = path.join(process.cwd(), "public/img/projects")
 
 export function getProjectsData(): Array<ProjectInfo> {
     function dateFromString(str: string): Date {
@@ -27,6 +29,7 @@ export function getProjectsData(): Array<ProjectInfo> {
 
         return {
             id,
+            hasImage: fs.existsSync(path.join(imagesDir, `${id}.png`)),
             title: parsed.data.title,
             date: dateFromString(parsed.data.date as string),
             content: parsed.content
