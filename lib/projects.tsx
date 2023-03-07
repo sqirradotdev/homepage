@@ -7,6 +7,9 @@ export interface ProjectInfo {
     hasImage: boolean
     title: string
     date: Date | string
+    type: string
+    status: string
+    links: {[key: string]: string}
     content: string
 }
 
@@ -32,6 +35,9 @@ export function getProjectsData(): Array<ProjectInfo> {
             hasImage: fs.existsSync(path.join(imagesDir, `${id}.png`)),
             title: parsed.data.title,
             date: dateFromString(parsed.data.date as string),
+            type: parsed.data.type,
+            status: parsed.data.status,
+            links: parsed.data.links,
             content: parsed.content
         }
     })

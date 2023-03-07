@@ -12,7 +12,6 @@ interface ProjectsProps {
 }
 
 export async function getStaticProps() {
-  getProjectsData()
   return {
     props: {
       projectList: JSON.parse(JSON.stringify(getProjectsData()))
@@ -24,7 +23,7 @@ export default function Projects({ projectList }: ProjectsProps) {
   projectList.map((value, index, array) => {
     value.date = new Date(value.date as string)
   })
-  
+
   projectList.sort((a, b) => {
     return a.date < b.date ? 1 : -1;
   });
@@ -77,9 +76,20 @@ export default function Projects({ projectList }: ProjectsProps) {
                   }
                   <ul>
                     <li><b>date:</b> {(value.date as Date).toLocaleDateString()}</li>
-                    <li><b>type:</b> game</li>
-                    <li><b>status:</b> finished</li>
-                    <li><b>links:</b> <a href="#">itch.io</a></li>
+                    <li><b>type:</b> {value.type}</li>
+                    <li><b>status:</b> {value.status}</li>
+                    <li>
+                      <b>status:</b>{" "}
+                      <>
+                        {function (){
+                          for (const key in value.links) {
+                            return (
+                              <a href={value.links[key]} target="_blank">{key}</a>
+                            )
+                          }
+                        }()}
+                      </>
+                    </li>
                   </ul>
                   <ReactMarkdown>
                     {value.content}
