@@ -1,5 +1,5 @@
 import fs from "fs"
-import path, { parse } from "path"
+import path from "path"
 import matter from "gray-matter"
 
 export interface ProjectInfo {
@@ -23,9 +23,9 @@ export function getProjectsData(): Array<ProjectInfo> {
     }
 
     const fileNames = fs.readdirSync(projectsDir)
-    const projectsData: Array<ProjectInfo> = fileNames.map((value, index, array) => {
-        const id = value.replace(/\.md$/, "")
-        const filePath = path.join(projectsDir, value)
+    const projectsData: Array<ProjectInfo> = fileNames.map((name) => {
+        const id = name.replace(/\.md$/, "")
+        const filePath = path.join(projectsDir, name)
         const fileContent = fs.readFileSync(filePath, 'utf8')
         
         const parsed = matter(fileContent)

@@ -20,8 +20,8 @@ export async function getStaticProps() {
 }
 
 export default function Projects({ projectList }: ProjectsProps) {
-  projectList.map((value, index, array) => {
-    value.date = new Date(value.date as string)
+  projectList.map((project) => {
+    project.date = new Date(project.date as string)
   })
 
   projectList.sort((a, b) => {
@@ -67,24 +67,24 @@ export default function Projects({ projectList }: ProjectsProps) {
         </div>
         <div className={`${styles.projectList} ignoreAnim`}>
           {
-            projectListState.map((value, index, array) => {
+            projectListState.map((project) => {
               return (
-                <div className={styles.projectRow} key={value.id}>
-                  <h3>{value.title}</h3>
+                <div className={styles.projectRow} key={project.id}>
+                  <h3>{project.title}</h3>
                   {
-                    value.hasImage ? <Image src={`/img/projects/${value.id}.png`} width={315} height={250} alt="" /> : <></>
+                    project.hasImage ? <Image src={`/img/projects/${project.id}.png`} width={315} height={250} alt="" /> : <></>
                   }
                   <ul>
-                    <li><b>date:</b> {(value.date as Date).toLocaleDateString()}</li>
-                    <li><b>type:</b> {value.type}</li>
-                    <li><b>status:</b> {value.status}</li>
+                    <li><b>date:</b> {(project.date as Date).toLocaleDateString()}</li>
+                    <li><b>type:</b> {project.type}</li>
+                    <li><b>status:</b> {project.status}</li>
                     <li>
                       <b>status:</b>{" "}
                       <>
                         {function (){
-                          for (const key in value.links) {
+                          for (const key in project.links) {
                             return (
-                              <a href={value.links[key]} target="_blank">{key}</a>
+                              <a href={project.links[key]} target="_blank">{key}</a>
                             )
                           }
                         }()}
@@ -92,7 +92,7 @@ export default function Projects({ projectList }: ProjectsProps) {
                     </li>
                   </ul>
                   <ReactMarkdown>
-                    {value.content}
+                    {project.content}
                   </ReactMarkdown>
                 </div>
               )

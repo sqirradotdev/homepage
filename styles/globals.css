@@ -2,7 +2,7 @@
 
 /* Variables */
 :root {
-    --main-width: 650px;
+    --main-width: 680px;
 }
 
 /* Common style */
@@ -28,6 +28,7 @@ h3 {
 
 p {
     margin: 8px 0 16px 0;
+    font-size: 1.1em;
 }
 
 a:link {
@@ -37,4 +38,10 @@ a:link {
 
 a:hover {
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 680px) and (min-height: 833px) {
+    body {
+        font-size: 18px;
+    }
 }

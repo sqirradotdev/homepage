@@ -1,0 +1,30 @@
+.postList .postRow {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: rgba(1.0, 1.0, 1.0, 0.07);
+}
+
+.postList .postRow:not(:last-child) {
+    margin: 0 0 20px 0;
+}
+
+.postList .postRow:hover {
+    background-color: rgba(1.0, 1.0, 1.0, 0.1);
+}
+
+.postList .postRow h1, .postDiv h1 {
+    margin: 0 0 5px 0;
+}
+
+.postList .postRow h3, .postDiv h3 {
+    margin: 0 0 20px 0;
+    font-weight: normal;
+    color: rgba(1.0, 1.0, 1.0, 0.5);
+}
+
+.postList .postRow p{
+    margin: 0;
+}

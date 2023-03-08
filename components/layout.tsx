@@ -8,13 +8,17 @@ import styles from "@/styles/layout.module.css"
 interface LayoutProps {
   children: ReactNode
   page: "home" | "about me" | "projects" | "blog"
+  customTitle?: string
 }
 
-export default function Layout({ children, page }: LayoutProps) {
+export default function Layout({ children, page, customTitle }: LayoutProps) {
+  let title = `${customTitle || page} - gedehari's homepage`
+
   return (
     <>
       <Head>
-        <title>{page as string} - gedehari's homepage</title>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
       </Head>
       <header>
         <nav className={styles.navbar}>

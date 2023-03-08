@@ -7,5 +7,4 @@ links: {
     'github': 'https://github.com/gedehari/IzzyEngine'
 }
 ---
-
 Izzy Engine is a complete recreation of Friday Night Funkin', aiming for easy custom content creation.

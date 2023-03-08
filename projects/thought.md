@@ -7,7 +7,6 @@ links: {
     'site': 'https://thought-machine.herokuapp.com/'
 }
 ---
-
 An anonymous board for posting thoughts.
 
 I made this during my time of learning Node.JS and Express.JS, where I learnt how JavaScript can be used for backends.
