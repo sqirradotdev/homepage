@@ -81,13 +81,13 @@ export default function Projects({ projectList }: ProjectsProps) {
                     <li>
                       <b>status:</b>{" "}
                       <>
-                        {function (){
-                          for (const key in project.links) {
+                        {
+                          Object.entries(project.links).map(([key, value]) => {
                             return (
-                              <a href={project.links[key]} target="_blank">{key}</a>
+                              <a href={value} target="_blank">{key}</a>
                             )
-                          }
-                        }()}
+                          })
+                        }
                       </>
                     </li>
                   </ul>
