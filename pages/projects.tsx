@@ -75,7 +75,7 @@ export default function Projects({ projectList }: ProjectsProps) {
                     project.hasImage ? <Image src={`/img/projects/${project.id}.png`} width={315} height={250} alt="" /> : <></>
                   }
                   <ul>
-                    <li><b>date:</b> {(project.date as Date).toLocaleDateString()}</li>
+                    <li><b>date:</b> {(project.date as Date).toLocaleDateString("en", { dateStyle: "medium" })}</li>
                     <li><b>type:</b> {project.type}</li>
                     <li><b>status:</b> {project.status}</li>
                     <li>

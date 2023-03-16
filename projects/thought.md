@@ -1,6 +1,6 @@
 ---
 title: 'The Thought Machine'
-date: '2023-3-9'
+date: '2023-3-16'
 type: 'website'
 status: 'ongoing'
 links: {
