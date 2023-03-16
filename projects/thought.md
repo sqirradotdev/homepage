@@ -1,12 +1,14 @@
 ---
-title: 'the thought machine'
-date: '2021-3-9'
+title: 'The Thought Machine'
+date: '2023-3-9'
 type: 'website'
-status: 'postponed'
+status: 'ongoing'
 links: {
-    'site': 'https://thought-machine.herokuapp.com/'
+    'site': 'https://the-thought-machine-next.vercel.app/'
 }
 ---
 An anonymous board for posting thoughts.
 
-I made this during my time of learning Node.JS and Express.JS, where I learnt how JavaScript can be used for backends.
+Rewritten in Next.js. I used Node.js for the old version.
+
+*Friendship ended with Heroku, now Vercel is my best friend.*
