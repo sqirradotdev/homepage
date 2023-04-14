@@ -4,7 +4,7 @@ date: '2023-3-16'
 type: 'website'
 status: 'ongoing'
 links: {
-    'site': 'https://the-thought-machine-next.vercel.app/'
+    'site': 'https://ttm.sqirra.dev/'
 }
 ---
 An anonymous board for posting thoughts.
