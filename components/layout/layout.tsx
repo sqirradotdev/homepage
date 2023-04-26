@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 import Link from "next/link"
 import Head from "next/head"
 
-import styles from "@/styles/layout.module.css"
+import styles from "./layout.module.css"
 
 interface LayoutProps {
   children: ReactNode
