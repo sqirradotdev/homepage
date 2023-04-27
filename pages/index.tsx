@@ -7,30 +7,15 @@ import styles from "@/styles/home.module.css"
 export default function Home() {
   return (
     <>
-      <Layout page="home">
-        <div className={styles.homeProfile}>
-          <h3>gedehari &bull; Ari the Squirrel</h3>
-          <Image className={styles.avatar} src="/img/avatar.png" alt="Avatar" width={200} height={200} />
-          <p>icon: <a href="https://twitter.com/Iku_Aldena" target="_blank"><i className="bi bi-twitter" /> @Iku_Aldena</a></p>
+      <Layout page="home" fadeIn={false}>
+        <div className={styles.infobox}>
+          <h2>gedehari &bull; Ari the Squirrel</h2>
+          <p>Local squirrel who loves programming and technology in general.</p>
+          <p>I'm interested in these fields: game developer, backend web developer, DevOps</p>
+          <p><i>"Good at programming, bad at everything else."</i></p>
+          <p><i>art: <a href="https://twitter.com/EIectroDev" target="_blank"><i className="bi bi-twitter" /> @EIectroDev</a></i></p>
         </div>
-
-        <h2 className={styles.heading}>I code in:</h2>
-        <div className={styles.languageIconsList}>
-          <img src="/img/languages/c.svg" />
-          <img src="/img/languages/cpp.svg" />
-          <img src="/img/languages/javascript.svg" />
-          <img src="/img/languages/typescript.svg" />
-          <img src="/img/languages/haxe.svg" />
-          <img src="/img/languages/godot.svg" />
-          <img src="/img/languages/kotlin.svg" />
-        </div>
-
-        <h2 className={styles.heading}>Find me in:</h2>
-        <div className={styles.socialIconsList}>
-          <a href="https://github.com/gedehari" target="_blank"><i className="bi bi-github" /></a>
-          <a href="https://twitter.com/gedehari" target="_blank"><i className="bi bi-twitter" /></a>
-          <a href="https://www.instagram.com/gedehari/" target="_blank"><i className="bi bi-instagram" /></a>
-        </div>
+        <img className={styles.halfbody} src="/img/halfbody.png" height={325} />
       </Layout>
     </>
   )

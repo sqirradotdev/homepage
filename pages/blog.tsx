@@ -34,9 +34,9 @@ export default function Blog({ postList }: BlogProps) {
             postList.map((post) => {
               return (
                 <Link className={styles.postRow} href={`/blog/${post.id}`} key={post.id}>
-                  <h1>{post.title}</h1>
-                  <h3>{(post.date as Date).toLocaleString()}</h3>
-                  <p>{post.summary}</p>
+                  <h1 className="ignoreFadeIn">{post.title}</h1>
+                  <h3 className="ignoreFadeIn">{(post.date as Date).toLocaleString()}</h3>
+                  <p className="ignoreFadeIn">{post.summary}</p>
                 </Link>
               )
             })

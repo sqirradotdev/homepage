@@ -36,7 +36,7 @@ export default function PostDisplay({ post }: PostDisplayProps) {
 
   return (
     <>
-      <Layout page="blog" customTitle={post.postInfo.title}>
+      <Layout page="blog" customTitle={`blog: ${post.postInfo.title}`}>
         <Link href="/blog"><p>&larr; Back</p></Link>
         <div className={styles.postDiv}>
           <h1>{post.postInfo.title}</h1>

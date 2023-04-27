@@ -5,7 +5,6 @@ export default function AboutMe() {
     <>
       <Layout page="about me">
         <h1>Greetings! <i>Selamat Datang!</i></h1>
-
         <p>My name is Hari Kresna Wiyasa. I do programming and game dev as a hobby, and perhaps as a job in the future.</p>
         <p>Welcome to my personal homepage! It serves as an index for my existence in the internet, and also documenting most of my journeys in programming.</p>
         <p>Want to contact me?</p>

@@ -1,28 +1,59 @@
 /* Navbar style */
 nav.navbar {
-    margin: 0 0 15px 0;
+    /* margin: 0 0 15px 0; */
+    margin: 0 auto;
+    max-width: var(--main-width);
 }
 
 nav.navbar ul {
     padding: 0;
     margin: 0 auto;
-    display: table;
+
     text-align: center;
+
+    display: flex;
 }
 
 nav.navbar ul li {
-    display: inline;
+    display: block;
+    position: relative;
+    transform: translate(0, 8px);
+    border-radius: 10px 10px 0 0;
+
     font-size: 1.2em;
+
+    flex: initial;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    transition: transform 100ms, background-color 100ms;
 }
 
-nav.navbar ul li:not(:first-child)::before {
-    content: "/";
-    font-weight: normal;
-    margin: 0 5px;
+nav.navbar ul li:hover,
+nav.navbar ul li.currentPage {
+    background-color: white !important;
+    transform: translate(0, 0);
 }
 
 nav.navbar ul li.currentPage {
+    z-index: 2;
+    box-shadow: none;
     font-weight: bold;
+}
+
+nav.navbar ul li:not(.currentPage) {
+    background-color: rgb(240, 240, 240);
+}
+
+nav.navbar ul li a {
+    display: block;
+    padding: 5px 12px 10px 12px;
+
+    color: inherit;
+}
+
+nav.navbar ul li a:hover {
+    text-decoration: none;
 }
 
 /* Main content style */
@@ -31,21 +62,25 @@ main.layoutMain {
     padding: 18px 20px;
     max-width: var(--main-width);
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 
-    border-radius: 8px;
+    overflow: hidden;
+
+    border-radius: 0px 10px 10px 10px;
 
     background-color: white;
 
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-main.layoutMain *:not(:global(.ignoreAnim)) {
+main.layoutMain.fadeIn *:not(:global(.ignoreFadeIn)) {
     opacity: 0%;
 
     animation-name: mainChildrenAnim;
-    animation-duration: 500ms;
+    animation-duration: 750ms;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 @keyframes mainChildrenAnim {
@@ -72,28 +107,4 @@ main.layoutMain ul li {
 .copyright {
     margin: 20px 0px;
     text-align: center;
-}
-
-@media only screen and (min-width: 650px) and (min-height: 833px) {
-    .layoutMainHome {
-        margin: unset;
-        overflow: hidden;
-
-        width: var(--main-width);
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-    }
-
-    .copyrightHome {
-        text-align: unset;
-
-        position: absolute;
-        bottom: 0%;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
 }

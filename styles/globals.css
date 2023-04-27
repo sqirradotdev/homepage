@@ -7,11 +7,16 @@
 
 /* Common style */
 body {
-    padding: 0;
-    margin: 13px;
     font-family: 'Quattrocento Sans', sans-serif;
-    background-color: #f5deb3;
     font-size: 16px;
+
+    background: rgb(238, 192, 106);
+    background: linear-gradient(0deg, rgba(238, 192, 106, 1) 0%, rgba(245, 222, 179, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 0;
+    margin: 15px;
 }
 
 h1 {
@@ -23,12 +28,13 @@ h2 {
 }
 
 h3 {
-    margin: 8px 0 16px 0;
+    margin: 6px 0 16px 0;
 }
 
 p {
-    margin: 8px 0 16px 0;
+    margin: 6px 0 16px 0;
     font-size: 1.1em;
+    line-height: 1.25em;
 }
 
 a:link {
@@ -40,7 +46,7 @@ a:hover {
     text-decoration: underline;
 }
 
-@media only screen and (min-width: 680px) and (min-height: 833px) {
+@media only screen and (min-width: 500px) {
     body {
         font-size: 18px;
     }

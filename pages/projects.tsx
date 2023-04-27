@@ -65,7 +65,7 @@ export default function Projects({ projectList }: ProjectsProps) {
             <option value="date-asc">Date (Ascending)</option>
           </select>
         </div>
-        <div className={`${styles.projectList} ignoreAnim`}>
+        <div className={`${styles.projectList} ignoreFadeIn`}>
           {
             projectListState.map((project) => {
               return (

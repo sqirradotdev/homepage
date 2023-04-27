@@ -1,3 +1,56 @@
+div.infobox {
+    position: relative;
+
+    animation-name: infoboxEntry, fadeIn;
+    animation-duration: 600ms, 400ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1), linear;
+}
+
+@keyframes infoboxEntry {
+    from {
+        transform: translate(-40px, 0px);
+    }
+
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+img.halfbody {
+    position: relative;
+    transform: translate(-50%, 10px) scale(1.1, 1.1);
+
+    left: 50%;
+
+    filter: drop-shadow(10px 5px 4px #0000003a);
+
+    animation-name: halfbodyEntry, fadeIn;
+    animation-duration: 600ms, 400ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1), linear;
+}
+
+@keyframes halfbodyEntry {
+    from {
+        transform: translate(calc(-50% + 40px), 10px);
+    }
+
+    to {
+        transform: translate(-50%, 10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 div.homeProfile {
     text-align: center;
 }
@@ -18,7 +71,8 @@ img.avatar {
     display: inline;
 }
 
-div.languageIconsList, div.socialIconsList {
+div.languageIconsList,
+div.socialIconsList {
     display: block;
     text-align: center;
 }
@@ -34,4 +88,39 @@ div.socialIconsList * {
     display: inline;
     margin: 0 3px;
     font-size: 50px;
+}
+
+@media only screen and (min-width: 640px) {
+    div.infobox {
+        width: calc(100% - 250px);
+
+        position: relative;
+
+        animation-name: infoboxEntry, fadeIn;
+        animation-duration: 600ms, 400ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1), linear;
+    }
+
+    img.halfbody {
+        position: absolute;
+        transform: translate(40px, 0px);
+        left: unset;
+        right: 0;
+        bottom: 0;
+
+        filter: drop-shadow(10px 5px 4px #0000003a);
+
+        animation-name: halfbodyEntryD, fadeIn;
+    }
+
+    @keyframes halfbodyEntryD {
+        from {
+            transform: translate(80px, 0px);
+        }
+
+        to {
+            transform: translate(40px, 0px);
+        }
+    }
 }
