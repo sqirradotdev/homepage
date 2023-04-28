@@ -9,10 +9,11 @@ interface LayoutProps {
   children: ReactNode
   page: "home" | "about me" | "projects" | "blog"
   customTitle?: string,
+  customMainClass?: string,
   fadeIn?: boolean
 }
 
-export default function Layout({ children, page, customTitle, fadeIn = true }: LayoutProps) {
+export default function Layout({ children, page, customTitle, customMainClass = "", fadeIn = true }: LayoutProps) {
   let title = `${customTitle || page} - gedehari's homepage`
 
   return (
@@ -33,7 +34,7 @@ export default function Layout({ children, page, customTitle, fadeIn = true }: L
         </nav>
       </header>
 
-      <main className={`${styles.layoutMain} ${fadeIn ? styles.fadeIn : ""}`}>
+      <main className={`${styles.layoutMain} ${fadeIn ? styles.fadeIn : ""} ${customMainClass}`}>
         {children}
       </main>
 

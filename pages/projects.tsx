@@ -72,7 +72,7 @@ export default function Projects({ projectList }: ProjectsProps) {
                 <div className={styles.projectRow} key={project.id}>
                   <h3>{project.title}</h3>
                   {
-                    project.hasImage ? <Image src={`/img/projects/${project.id}.png`} width={315} height={250} alt="" /> : <></>
+                    project.hasImage ? <Image src={`/img/projects/${project.id}.png`} width={315} height={250} alt={`Project cover art for ${project.title}`} /> : <></>
                   }
                   <ul>
                     <li><b>date:</b> {(project.date as Date).toLocaleDateString("en", { dateStyle: "medium" })}</li>
