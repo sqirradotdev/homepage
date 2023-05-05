@@ -77,20 +77,28 @@ main.layoutMain {
 main.layoutMain.fadeIn *:not(:global(.ignoreFadeIn)) {
     opacity: 0%;
 
-    animation-name: mainChildrenAnim;
-    animation-duration: 750ms;
+    animation-name: mainChildrenAnim, fadeIn;
+    animation-duration: 600ms, 400ms;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1), linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes mainChildrenAnim {
     0% {
-        opacity: 0%;
         transform: scale(1.05);
     }
 
     100% {
-        opacity: 100%;
         transform: scale(1.0);
     }
 }
