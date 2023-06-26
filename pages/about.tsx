@@ -10,7 +10,7 @@ export default function AboutMe() {
         <p>Want to contact me?</p>
         <ul>
           <li><i className="bi bi-envelope-fill" /> harikresnagede (at) gmail (dot) com</li>
-          <li><i className="bi bi-discord" /> Ari the Squirrel#1520</li>
+          <li><i className="bi bi-discord" /> sqirradotdev</li>
         </ul>
         <p>You can also find me on these sites.</p>
         <ul>
