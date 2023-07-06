@@ -1,5 +1,7 @@
 import Layout from "@/components/layout"
 
+import styles from "@/styles/about.module.css"
+
 export default function AboutMe() {
   return (
     <>
@@ -9,7 +11,7 @@ export default function AboutMe() {
         <p>Welcome to my personal homepage! It serves as an index for my existence in the internet, and also documenting most of my journeys in programming.</p>
         <p>Want to contact me?</p>
         <ul>
-          <li><i className="bi bi-envelope-fill" /> harikresnagede (at) gmail (dot) com</li>
+          <li><i className="bi bi-envelope-fill" /> harikresnagede (at) gm<span className={styles.doNotSpamMePleaseThankYou} aria-hidden="true">i wish spammers a very redacted</span>ail (dot) com</li>
           <li><i className="bi bi-discord" /> sqirradotdev</li>
         </ul>
         <p>You can also find me on these sites.</p>

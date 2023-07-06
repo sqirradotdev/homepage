@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 
@@ -8,52 +8,43 @@ import { getProjectsData, ProjectInfo } from "@/lib/projects"
 import styles from "@/styles/projects.module.css"
 
 interface ProjectsProps {
-  projectList: Array<ProjectInfo>
+  fetchedProjects: Array<ProjectInfo>
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
   return {
     props: {
-      projectList: JSON.parse(JSON.stringify(getProjectsData()))
+      fetchedProjects: JSON.parse(JSON.stringify(getProjectsData()))
     }
   }
 }
 
-export default function Projects({ projectList }: ProjectsProps) {
-  projectList.map((project) => {
+export default function Projects({ fetchedProjects }: ProjectsProps) {
+  fetchedProjects.map((project) => {
     project.date = new Date(project.date as string)
   })
 
-  projectList.sort((a, b) => {
+  fetchedProjects.sort((a, b) => {
     return a.date < b.date ? 1 : -1;
   });
 
-  const [projectListState, setProjectListState] = useState(new Array<ProjectInfo>())
-  useEffect(() => {
-    setProjectListState(projectList)
-  }, [])
+  const [projects, setProjects] = useState<ProjectInfo[]>([...fetchedProjects])
 
-  function sortProjects(asc: boolean) {
-    let current = [...projectListState]
+  function sortProjects(type: "asc" | "desc") {
+    let current = [...projects]
     current.sort((a, b) => {
-      if (asc) {
+      if (type === "asc") {
         return a.date > b.date ? 1 : -1;
       }
 
       return a.date < b.date ? 1 : -1;
     })
-    setProjectListState(current)
+    setProjects(current)
   }
 
   function onSortSelectChange(a: any) {
-    switch (a.target.value) {
-      case "date-dsc":
-        sortProjects(false);
-        break;
-      case "date-asc":
-        sortProjects(true);
-        break;
-    }
+    const type = a.target.value as "asc" | "desc"
+    sortProjects(type)
   }
 
   return (
@@ -61,30 +52,56 @@ export default function Projects({ projectList }: ProjectsProps) {
       <Layout page="projects">
         <div className={styles.sortDiv}>
           <select id="sort-select" onChange={onSortSelectChange}>
-            <option value="date-dsc">Date (Descending)</option>
-            <option value="date-asc">Date (Ascending)</option>
+            <option value="desc">Date (Descending)</option>
+            <option value="asc">Date (Ascending)</option>
           </select>
         </div>
         <div className={`${styles.projectList} ignoreFadeIn`}>
           {
-            projectListState.map((project) => {
+            projects.map((project) => {
               return (
-                <div className={styles.projectRow} key={project.id}>
-                  <h3>{project.title}</h3>
-                  {
-                    project.hasImage ? <Image src={`/img/projects/${project.id}.png`} width={315} height={250} alt={`Project cover art for ${project.title}`} /> : <></>
-                  }
-                  <ul>
+                <div className={`${styles.projectRow} ignoreFadeIn`} key={project.id}>
+                  <div className="ignoreFadeIn">
+                    <Image
+                      src={`/img/projects/${project.hasImage ? project.id + ".png" : "unknown.svg"}`}
+                      width={315}
+                      height={250}
+                      alt={`Project image for ${project.title}`}
+                    />
+                  </div>
+                  <div className="ignoreFadeIn">
+                    <h2 className={styles.projectTitle}>{project.title}</h2>
+                    <div className={styles.projectInfo}>
+                      <p>{(project.date as Date).toLocaleDateString("en", { dateStyle: "medium" })}</p>
+                      <p>{project.type}</p>
+                      <p>{project.status}</p>
+                    </div>
+                    <div className={`${styles.projectDesc} ignoreFadeIn`}>
+                      <ReactMarkdown>
+                        {project.content}
+                      </ReactMarkdown>
+                    </div>
+                    <div className={`${styles.projectLinks} ignoreFadeIn`}>
+                      <>
+                        {Object.entries(project.links).map(([key, value]) => {
+                          return (
+                            <a href={value} target="_blank" key={key}>{key}</a>
+                          )
+                        })}
+                      </>
+                    </div>
+                  </div>
+                  {/* <ul>
                     <li><b>date:</b> {(project.date as Date).toLocaleDateString("en", { dateStyle: "medium" })}</li>
                     <li><b>type:</b> {project.type}</li>
                     <li><b>status:</b> {project.status}</li>
                     <li>
-                      <b>status:</b>{" "}
+                      <b>links:</b>{" "}
                       <>
                         {
                           Object.entries(project.links).map(([key, value]) => {
                             return (
-                              <a href={value} target="_blank">{key}</a>
+                              <a href={value} target="_blank" key={key}>{key}</a>
                             )
                           })
                         }
@@ -93,7 +110,7 @@ export default function Projects({ projectList }: ProjectsProps) {
                   </ul>
                   <ReactMarkdown>
                     {project.content}
-                  </ReactMarkdown>
+                  </ReactMarkdown> */}
                 </div>
               )
             })

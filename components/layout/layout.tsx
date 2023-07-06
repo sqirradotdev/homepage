@@ -8,19 +8,19 @@ import styles from "./layout.module.css"
 interface LayoutProps {
   children: ReactNode
   page: "home" | "about me" | "projects" | "blog"
-  customTitle?: string,
-  customMainClass?: string,
+  title?: string,
+  mainClass?: string,
   fadeIn?: boolean
 }
 
-export default function Layout({ children, page, customTitle, customMainClass = "", fadeIn = true }: LayoutProps) {
-  let title = `${customTitle || page} - gedehari's homepage`
+export default function Layout({ children, page, title, mainClass = "", fadeIn = true }: LayoutProps) {
+  let pageTitle = `${title || page} - gedehari's homepage`
 
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta property="og:title" content={title} />
+        <title>{pageTitle}</title>
+        <meta property="og:title" content={pageTitle} />
       </Head>
 
       <header>
@@ -34,7 +34,7 @@ export default function Layout({ children, page, customTitle, customMainClass = 
         </nav>
       </header>
 
-      <main className={`${styles.layoutMain} ${fadeIn ? styles.fadeIn : ""} ${customMainClass}`}>
+      <main className={`${styles.layoutMain} ${fadeIn ? styles.fadeIn : ""} ${mainClass}`}>
         {children}
       </main>
 

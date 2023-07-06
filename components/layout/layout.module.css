@@ -38,7 +38,6 @@ nav.navbar ul li.currentPage {
 nav.navbar ul li.currentPage {
     z-index: 2;
     box-shadow: none;
-    font-weight: bold;
 }
 
 nav.navbar ul li:not(.currentPage) {

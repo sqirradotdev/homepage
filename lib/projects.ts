@@ -9,7 +9,7 @@ export interface ProjectInfo {
     date: Date | string
     type: string
     status: string
-    links: {[key: string]: string}
+    links: { [key: string]: string }
     content: string
 }
 
@@ -18,7 +18,7 @@ const imagesDir = path.join(process.cwd(), "public/img/projects")
 
 export function getProjectsData(): Array<ProjectInfo> {
     function dateFromString(str: string): Date {
-        let split = str.split("-").map((s) => { return parseInt(s)});
+        let split = str.split("-").map((s) => { return parseInt(s) });
         return new Date(split[0], split[1] + 1, split[2]);
     }
 
@@ -27,7 +27,7 @@ export function getProjectsData(): Array<ProjectInfo> {
         const id = name.replace(/\.md$/, "")
         const filePath = path.join(projectsDir, name)
         const fileContent = fs.readFileSync(filePath, 'utf8')
-        
+
         const parsed = matter(fileContent)
 
         return {
