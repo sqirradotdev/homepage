@@ -14,7 +14,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, page, title, mainClass = "", fadeIn = true }: LayoutProps) {
-  let pageTitle = `${title || page} - gedehari's homepage`
+  let pageTitle = `${title || page} - sqirradotdev's homepage`
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function Layout({ children, page, title, mainClass = "", fadeIn =
       </main>
 
       <footer>
-        <p className={styles.copyright}>site by gedehari</p>
+        <p className={styles.copyright}>sqirradotdev</p>
       </footer>
     </>
   )

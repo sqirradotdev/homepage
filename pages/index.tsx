@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Layout page="home" fadeIn={false} mainClass={styles.homeLayoutMain}>
         <div className={styles.infobox}>
-          <h2>gedehari &bull; Ari the Squirrel</h2>
+          <h2>sqirradotdev &bull; Ari the Squirrel</h2>
           <p>Local squirrel who loves programming and technology in general.</p>
           <p>I&apos;m interested in these fields: game developer, backend web developer, DevOps</p>
           <p><i>&quot;Good at programming, bad at everything else.&quot;</i></p>

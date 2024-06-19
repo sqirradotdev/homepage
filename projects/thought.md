@@ -2,7 +2,7 @@
 title: 'The Thought Machine'
 date: '2023-3-16'
 type: 'website'
-status: 'ongoing'
+status: 'finished (down)'
 links: {
     'site': 'https://ttm.sqirra.dev/'
 }

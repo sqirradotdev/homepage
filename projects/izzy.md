@@ -4,7 +4,7 @@ date: '2021-5-12'
 type: 'framework'
 status: 'canceled'
 links: {
-    'github': 'https://github.com/gedehari/IzzyEngine'
+    'github': 'https://github.com/sqirradotdev/IzzyEngine'
 }
 ---
 Izzy Engine is a complete recreation of Friday Night Funkin', aiming for easy custom content creation.
