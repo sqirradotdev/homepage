@@ -19,7 +19,7 @@ export default function AboutMe() {
           <li><a href="https://github.com/sqirradotdev" target="_blank"><i className="bi bi-github" /> sqirradotdev</a></li>
           <li><a href="https://twitter.com/sqirradotdev" target="_blank"><i className="bi bi-twitter" /> @sqirradotdev</a></li>
           <li><a href="https://www.instagram.com/gedehari/" target="_blank"><i className="bi bi-instagram" /> @gedehari</a></li>
-          <li><a href="https://www.linkedin.com/in/i-gede-hari-kresna-wiyasa-682316175/" target="_blank"><i className="bi bi-linkedin" /> I Gede Hari Kresna Wiyasa</a></li>
+          <li><a href="https://www.linkedin.com/in/gedehari/" target="_blank"><i className="bi bi-linkedin" /> Linkedin</a></li>
         </ul>
         <p>Thank you for visiting!</p>
       </Layout>
